@@ -15,23 +15,20 @@ public class ScrollingScreen : MonoBehaviour {
     private Vector3 PositionCam;
     private Camera cam;
 
-    private void Awake()
-    {
-        cam = Camera.main;
-        heightCamera = 2f * cam.orthographicSize;
-        widthCamera = heightCamera * cam.aspect;
-    }
 
     // Durning the renderring 
     private void Awake() {
 
         cam = Camera.main;
-        HeightOfCamera = 2f * cam.orthographicSize;
-        WidthOfCamera = heightCamera * cam.aspect;
+        heightCamera = 2f * cam.orthographicSize;
+        widthCamera = heightCamera * cam.aspect;
     }
+
+   
 
     // Update is called once per frame
     void Update() {
+
         foreach (var item in sprites) {
 
             if (Dir == Direction.Left) {
