@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(AudioSource))]
 public class Movmnent_Controller : MonoBehaviour
 {
     public int speed = 10;
@@ -9,6 +10,10 @@ public class Movmnent_Controller : MonoBehaviour
 
     public float canFire = 0.0f;
     public float fireRate = 0.25f;
+    [SerializeField]
+    private float hp = 200f;
+
+    public GameObject Explosion;
 
     // Start is called before the first frame update
     void Start()
@@ -44,7 +49,25 @@ public class Movmnent_Controller : MonoBehaviour
     void Shoot()
     {
         if (Time.time > canFire)
-        Instantiate(Katana, Katana.transform.position = new Vector3(transform.position.x + 0.35f, transform.position.y + 3.15f, 0), Quaternion.identity);
+        {
+            Instantiate(Katana, Katana.transform.position = new Vector3(transform.position.x + 0.35f, transform.position.y + 3.15f, 0), Quaternion.identity);
+            PlaySound();
+        }
         canFire = Time.time + fireRate;
+    }
+    void PlaySound() {
+        AudioSource audio = GetComponent<AudioSource>();
+        audio.Play();
+        audio.Play(44100);
+    }
+    public void Damage()
+    {
+        hp -= 100;
+
+        if (hp < 1)
+        {
+            Instantiate(Explosion, transform.position, Quaternion.identity);
+            Destroy(gameObject);
+        }
     }
 }
