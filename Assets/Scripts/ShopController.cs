@@ -15,6 +15,9 @@ public class ShopController : MonoBehaviour {
         dzida = PlayerPrefs.GetInt("dzida");
         lpg = PlayerPrefs.GetInt("lpg");
         osad = PlayerPrefs.GetInt("osad");
+        float enemyms = PlayerPrefs.GetFloat("enemyms");
+        enemyms += 0.25f;
+        PlayerPrefs.SetFloat("enemyms", enemyms);
         SetSkillsIcons();
     }
 	

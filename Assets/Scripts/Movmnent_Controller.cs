@@ -14,8 +14,8 @@ public class Movmnent_Controller : MonoBehaviour
     public int speed = 10;
     public GameObject Katana;
     float lastFireTime;
-    public float fireCooldown = 1f;
-    public float hp = 200f;
+    public float fireCooldown = 0.8f;
+    public int hp = 300;
 
     public GameObject Explosion;
 
@@ -27,7 +27,10 @@ public class Movmnent_Controller : MonoBehaviour
         dzida = PlayerPrefs.GetInt("dzida");
         lpg = PlayerPrefs.GetInt("lpg");
         osad = PlayerPrefs.GetInt("osad");
-        speed = speed + lpg * 3;
+        fireCooldown = PlayerPrefs.GetFloat("cooldown");
+        fireCooldown -= dzida * 0.2f;
+        speed += lpg * 3;
+        hp += osad * 100;
         spawners = GameObject.FindGameObjectsWithTag("Spawner");
         foreach (GameObject s in spawners) {
             s.SetActive(false);
@@ -50,19 +53,72 @@ public class Movmnent_Controller : MonoBehaviour
         {
             Shoot();
         }
-        if (hp == 100)
-        {
-            GameObject.Find("life2").SetActive(false);
-        }
-        if (hp == 200)
-        {
-            GameObject.Find("life3").SetActive(false);
-        }
-        if (hp == 300)
-        {
-            GameObject.Find("life1").SetActive(true);
-            GameObject.Find("life2").SetActive(true);
-            GameObject.Find("life3").SetActive(true);
+        switch (hp) {
+            case 100:
+                {
+                    GameObject.Find("life1").SetActive(true);
+                    string name = "life";
+                    for (int i = 2; i < 7; i++)
+                    {
+                        GameObject.Find(name + i).SetActive(false);
+                    }
+                    break;
+                }
+            case 200:
+                {
+                    GameObject.Find("life1").SetActive(true);
+                    GameObject.Find("life2").SetActive(true);
+                    string name = "life";
+                    for (int i = 3; i < 7; i++)
+                    {
+                        GameObject.Find(name + i).SetActive(false);
+                    }
+                    break;
+                }
+            case 300:
+                {
+                    GameObject.Find("life1").SetActive(true);
+                    GameObject.Find("life2").SetActive(true);
+                    GameObject.Find("life3").SetActive(true);
+                    string name = "life";
+                    for (int i = 4; i < 7; i++)
+                    {
+                        GameObject.Find(name + i).SetActive(false);
+                    }
+                    break;
+                }
+            case 400:
+                {
+                    string name = "life";
+                    for (int i = 1; i < 5; i++)
+                    {
+                        GameObject.Find(name + i).SetActive(true);
+                    }
+                    GameObject.Find("life5").SetActive(false);
+                    GameObject.Find("life6").SetActive(false);
+                    break;
+                }
+            case 500:
+                {
+                    string name = "life";
+                    for (int i = 1; i < 6; i++)
+                    {
+                        GameObject.Find(name + i).SetActive(true);
+                    }
+                    GameObject.Find("life6").SetActive(false);
+                    break;
+                }
+            case 600:
+                {
+                    string name = "life";
+                    for (int i = 1; i < 7; i++)
+                    {
+                        GameObject.Find(name + i).SetActive(true);
+                    }
+                    break;
+                }
+            default:
+                break;
         }
     }
     void Movement()

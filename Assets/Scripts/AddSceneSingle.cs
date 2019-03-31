@@ -12,6 +12,8 @@ public class AddSceneSingle : MonoBehaviour
         PlayerPrefs.SetInt("dzida", 0);
         PlayerPrefs.SetInt("lpg", 0);
         PlayerPrefs.SetInt("osad", 0);
+        PlayerPrefs.SetFloat("cooldown", 0.8f);
+        PlayerPrefs.SetFloat("enemyms",1.4f);
     }
     void update() { }
     private void OnMouseDown()

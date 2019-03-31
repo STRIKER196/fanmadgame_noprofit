@@ -1,13 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class spawner : MonoBehaviour
 {
     public GameObject enemyPrefab;
     GameObject currentEnemy;
     public int enemyNumber = 0;
-    public int totalEnemyNumber = 5;
+    public int totalEnemyNumber = 7;
     bool ready = false;
     // Start is called before the first frame update
     void Start()
@@ -24,5 +25,14 @@ public class spawner : MonoBehaviour
             currentEnemy = Instantiate(newEnemy);
             enemyNumber += 1;
         }
+        if (enemyNumber == 7) {
+            StartCoroutine(LoserScene());
+        }
+    }
+    IEnumerator LoserScene()
+    {
+        yield return new WaitForSeconds(5f);
+        SceneManager.LoadScene("GameOverScene", LoadSceneMode.Single);
+
     }
 }

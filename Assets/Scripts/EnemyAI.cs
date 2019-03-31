@@ -7,7 +7,7 @@ public class EnemyAI : MonoBehaviour
     [SerializeField]
     private GameObject _enemyExplosionPrefab;
     public GameObject enemy;
-    private float _speed = 1.3f;
+    private float _speed = 1.4f;
 
     GameObject player;
     PlayerController pc;
@@ -19,7 +19,7 @@ public class EnemyAI : MonoBehaviour
         //guzik.SetActive(false);
         player = GameObject.FindGameObjectWithTag("Player");
         pc = player.GetComponent<PlayerController>();
-
+        _speed = PlayerPrefs.GetFloat("enemyms");
     }
 
     // Update is called once per frame
@@ -29,8 +29,7 @@ public class EnemyAI : MonoBehaviour
 
         if (transform.position.y < -7)
         {
-            float randomX = Random.Range(-8, 8);
-            transform.position = new Vector3(randomX, 7, 0);
+            Destroy(gameObject);
         }
     }
     private void OnTriggerEnter2D(Collider2D other)
