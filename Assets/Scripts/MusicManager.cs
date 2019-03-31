@@ -40,7 +40,7 @@ public class MusicManager : MonoBehaviour
 
     private void Update()
     {
-        if (SceneManager.GetActiveScene().name.Equals("LevelScene"))
+        if (SceneManager.GetActiveScene().name.Equals("WinnerScene") || SceneManager.GetActiveScene().name.Equals("GameOverScene"))
             Destroy(this.gameObject);
     }
 

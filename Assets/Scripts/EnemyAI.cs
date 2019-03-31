@@ -8,18 +8,23 @@ public class EnemyAI : MonoBehaviour
     private GameObject _enemyExplosionPrefab;
     public GameObject enemy;
     private float _speed = 1.4f;
+    int mobLevel = 0;
 
     GameObject player;
     PlayerController pc;
+    SpriteRenderer sr;
 
+    public Sprite[] sprites;
 
     // Start is called before the first frame update
     void Start()
     {
-        //guzik.SetActive(false);
         player = GameObject.FindGameObjectWithTag("Player");
         pc = player.GetComponent<PlayerController>();
         _speed = PlayerPrefs.GetFloat("enemyms");
+        mobLevel = PlayerPrefs.GetInt("mobLevel");
+        sr = this.GetComponent<SpriteRenderer>();
+        sr.sprite = sprites[mobLevel];
     }
 
     // Update is called once per frame

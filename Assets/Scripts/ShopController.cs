@@ -9,6 +9,7 @@ public class ShopController : MonoBehaviour {
     int osad;
     public Sprite tak;
     public Sprite nie;
+    int mobLevel = 0;
     SpriteRenderer otherObjectRenderer;
     // Use this for initialization
     void Start () {
@@ -19,6 +20,9 @@ public class ShopController : MonoBehaviour {
         enemyms += 0.25f;
         PlayerPrefs.SetFloat("enemyms", enemyms);
         SetSkillsIcons();
+        mobLevel = PlayerPrefs.GetInt("mobLevel");
+        mobLevel += 1;
+        PlayerPrefs.SetInt("mobLevel", mobLevel);
     }
 	
 	// Update is called once per frame

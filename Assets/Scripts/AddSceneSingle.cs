@@ -14,6 +14,7 @@ public class AddSceneSingle : MonoBehaviour
         PlayerPrefs.SetInt("osad", 0);
         PlayerPrefs.SetFloat("cooldown", 0.8f);
         PlayerPrefs.SetFloat("enemyms",1.4f);
+        PlayerPrefs.SetInt("mobLevel", 0);
     }
     void update() { }
     private void OnMouseDown()
