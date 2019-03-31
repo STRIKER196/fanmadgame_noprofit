@@ -9,12 +9,19 @@ public class EnemyAI : MonoBehaviour
     public GameObject enemy;
     private float _speed = 2.5f;
 
+    GameObject player;
+    PlayerController pc;
+
+
     public GameObject guzik;
 
     // Start is called before the first frame update
     void Start()
     {
-        guzik.SetActive(false);
+        //guzik.SetActive(false);
+        player = GameObject.FindGameObjectWithTag("Player");
+        pc = player.GetComponent<PlayerController>();
+
     }
 
     // Update is called once per frame
@@ -39,6 +46,7 @@ public class EnemyAI : MonoBehaviour
             Destroy(other.gameObject);
             Instantiate(_enemyExplosionPrefab, transform.position, Quaternion.identity);
             Destroy(gameObject);
+            pc.DodajPunktyPoziomu(10);
         }
         else if (other.tag == "Player")
         {
@@ -49,7 +57,6 @@ public class EnemyAI : MonoBehaviour
                 player.Damage();
             }
             Instantiate(_enemyExplosionPrefab, transform.position, Quaternion.identity);
-            //playerController.DodajPunktyPoziomu(10);
             Destroy(gameObject);
 
 

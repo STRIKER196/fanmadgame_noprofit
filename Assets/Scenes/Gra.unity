@@ -371,6 +371,12 @@ Prefab:
       propertyPath: score
       value: 
       objectReference: {fileID: 815200632}
+    - target: {fileID: 114981043348112472, guid: 065e0baf88615634ca09a46978226bfb,
+        type: 2}
+      propertyPath: Katana
+      value: 
+      objectReference: {fileID: 9124563897299607117, guid: 487f53611838a094e83c737dd51ef722,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 065e0baf88615634ca09a46978226bfb, type: 2}
   m_IsPrefabAsset: 0

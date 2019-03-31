@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour {
@@ -21,7 +22,9 @@ public class PlayerController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
+        if (levelPoints >= 20) {
+            OtworzSklep();
+        }
 	}
 
     public void UlepszDzide() {
@@ -66,5 +69,9 @@ public class PlayerController : MonoBehaviour {
     public void DodajPunktyPoziomu(int ileDodac) {
         levelPoints += ileDodac;
         textPoints.text = "Score: " + levelPoints.ToString() + "/100";
+    }
+
+    public void OtworzSklep() {
+        SceneManager.LoadScene("Sklep", LoadSceneMode.Additive);
     }
 }
