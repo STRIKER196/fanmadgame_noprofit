@@ -7,13 +7,11 @@ public class EnemyAI : MonoBehaviour
     [SerializeField]
     private GameObject _enemyExplosionPrefab;
     public GameObject enemy;
-    private float _speed = 2.5f;
+    private float _speed = 1.3f;
 
     GameObject player;
     PlayerController pc;
 
-
-    public GameObject guzik;
 
     // Start is called before the first frame update
     void Start()
@@ -46,7 +44,7 @@ public class EnemyAI : MonoBehaviour
             Destroy(other.gameObject);
             Instantiate(_enemyExplosionPrefab, transform.position, Quaternion.identity);
             Destroy(gameObject);
-            pc.DodajPunktyPoziomu(10);
+            pc.DodajPunktyPoziomu(1);
         }
         else if (other.tag == "Player")
         {

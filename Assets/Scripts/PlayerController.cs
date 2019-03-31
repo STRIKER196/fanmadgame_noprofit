@@ -10,10 +10,10 @@ public class PlayerController : MonoBehaviour {
     public GameObject score;
     private Text textPoints;
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start () {
         textPoints = score.GetComponent<Text>();
-        textPoints.text = "0";
+        textPoints.text = "Points: 0";
 	}
 	
 	// Update is called once per frame
@@ -25,7 +25,7 @@ public class PlayerController : MonoBehaviour {
 
     public void DodajPunktyPoziomu(int ileDodac) {
         levelPoints += ileDodac;
-        textPoints.text = "Score: " + levelPoints.ToString() + "/100";
+        textPoints.text = "Points: " + levelPoints.ToString();
     }
 
     public void OtworzSklep() {

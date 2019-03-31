@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class ExitSplash : MonoBehaviour {
 
+    public string level;
+    public float time;
 	// Use this for initialization
 	void Start () {
 
@@ -14,11 +16,11 @@ public class ExitSplash : MonoBehaviour {
     IEnumerator Example()
     {
         print(Time.time);
-        yield return new WaitForSeconds(7f);
+        yield return new WaitForSeconds(time);
         Exit();
     }
     private void Exit()
     {
-        SceneManager.LoadScene("Menu", LoadSceneMode.Single);
+        SceneManager.LoadScene(level, LoadSceneMode.Single);
     }
 }

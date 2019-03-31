@@ -14,7 +14,7 @@ public class IntroFade : MonoBehaviour {
 
     IEnumerator waiter() {
         FadeOut();
-        yield return new WaitForSeconds(3.5f);
+        yield return new WaitForSeconds(4.5f);
         FadeIn();
     }
 
