@@ -14,7 +14,7 @@ public class ExitSplash : MonoBehaviour {
     IEnumerator Example()
     {
         print(Time.time);
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(7f);
         Exit();
     }
     private void Exit()
