@@ -139,7 +139,7 @@ public class Movmnent_Controller : MonoBehaviour
     }
     void Shoot()
     {
-        if (lastFireTime + fireCooldown <= Time.time)
+        if (lastFireTime + fireCooldown < Time.time)
         {
             Instantiate(Katana, Katana.transform.position = new Vector3(transform.position.x + 0.35f, transform.position.y + 3.15f, 0), Quaternion.identity);
             PlaySound();

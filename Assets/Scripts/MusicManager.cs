@@ -4,7 +4,7 @@ using UnityEngine.SceneManagement;
 public class MusicManager : MonoBehaviour
 {
     private static MusicManager _instance;
-
+    public string level1, level2;
     public static MusicManager instance
     {
         get
@@ -40,7 +40,7 @@ public class MusicManager : MonoBehaviour
 
     private void Update()
     {
-        if (SceneManager.GetActiveScene().name.Equals("WinnerScene") || SceneManager.GetActiveScene().name.Equals("GameOverScene"))
+        if (SceneManager.GetActiveScene().name.Equals(level1) || SceneManager.GetActiveScene().name.Equals(level2))
             Destroy(this.gameObject);
     }
 
