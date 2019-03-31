@@ -7,10 +7,7 @@ public class EnemyAI : MonoBehaviour
     [SerializeField]
     private GameObject _enemyExplosionPrefab;
     public GameObject enemy;
-
     private float _speed = 2.5f;
-
-    public int points = 0;
 
     public GameObject guzik;
 
@@ -52,8 +49,8 @@ public class EnemyAI : MonoBehaviour
                 player.Damage();
             }
             Instantiate(_enemyExplosionPrefab, transform.position, Quaternion.identity);
+            //playerController.DodajPunktyPoziomu(10);
             Destroy(gameObject);
-            points += 10;
 
 
         }
