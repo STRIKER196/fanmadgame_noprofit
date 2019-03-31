@@ -71,17 +71,17 @@ public class ShopController : MonoBehaviour {
             otherObjectRenderer = GameObject.Find(nazwa + i.ToString()).GetComponent<SpriteRenderer>();
             otherObjectRenderer.sprite = nie;
         }
-        if (dzida >= 1)
+        if (lpg >= 1)
         {
             otherObjectRenderer = GameObject.Find("lpg1").GetComponent<SpriteRenderer>();
             otherObjectRenderer.sprite = tak;
         }
-        if (dzida >= 2)
+        if (lpg >= 2)
         {
             otherObjectRenderer = GameObject.Find("lpg2").GetComponent<SpriteRenderer>();
             otherObjectRenderer.sprite = tak;
         }
-        if (dzida == 3)
+        if (lpg == 3)
         {
             otherObjectRenderer = GameObject.Find("lpg3").GetComponent<SpriteRenderer>();
             otherObjectRenderer.sprite = tak;
@@ -95,17 +95,17 @@ public class ShopController : MonoBehaviour {
                 otherObjectRenderer = GameObject.Find(nazwa + i.ToString()).GetComponent<SpriteRenderer>();
                 otherObjectRenderer.sprite = nie;
             }
-            if (dzida >= 1)
+            if (osad >= 1)
             {
                 otherObjectRenderer = GameObject.Find("osad1").GetComponent<SpriteRenderer>();
                 otherObjectRenderer.sprite = tak;
             }
-            if (dzida >= 2)
+            if (osad >= 2)
             {
                 otherObjectRenderer = GameObject.Find("osad2").GetComponent<SpriteRenderer>();
                 otherObjectRenderer.sprite = tak;
             }
-            if (dzida == 3)
+            if (osad == 3)
             {
                 otherObjectRenderer = GameObject.Find("osad3").GetComponent<SpriteRenderer>();
                 otherObjectRenderer.sprite = tak;

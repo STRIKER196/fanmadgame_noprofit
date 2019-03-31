@@ -5,6 +5,10 @@ using UnityEngine;
 [RequireComponent(typeof(AudioSource))]
 public class Movmnent_Controller : MonoBehaviour
 {
+    int dzida;
+    int lpg;
+    int osad;
+
     public int speed = 10;
     public GameObject Katana;
 
@@ -19,6 +23,10 @@ public class Movmnent_Controller : MonoBehaviour
     void Start()
     {
         transform.position = new Vector3(0, -4, 0);
+        dzida = PlayerPrefs.GetInt("dzida");
+        lpg = PlayerPrefs.GetInt("lpg");
+        osad = PlayerPrefs.GetInt("osad");
+        speed = speed + lpg * 3;
     }
 
     // Update is called once per frame
