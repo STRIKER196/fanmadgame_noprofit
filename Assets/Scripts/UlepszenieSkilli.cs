@@ -62,9 +62,7 @@ public class UlepszenieSkilli : MonoBehaviour
 
         if (mobLevel >= 9)
         {
-            SetAll();
-            HideElements();
-            b4.SetActive(true);
+            SceneManager.LoadScene("BossLevel", LoadSceneMode.Single);
         }
     }
     void HideElements()
