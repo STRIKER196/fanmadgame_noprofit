@@ -20,9 +20,9 @@ public class ShopController : MonoBehaviour {
         enemyms += 0.25f;
         PlayerPrefs.SetFloat("enemyms", enemyms);
         SetSkillsIcons();
-        mobLevel = PlayerPrefs.GetInt("mobLevel");
-        mobLevel += 1;
-        PlayerPrefs.SetInt("mobLevel", mobLevel);
+        //mobLevel = PlayerPrefs.GetInt("mobLevel");
+        //mobLevel += 1;
+        //PlayerPrefs.SetInt("mobLevel", mobLevel);
     }
 	
 	// Update is called once per frame

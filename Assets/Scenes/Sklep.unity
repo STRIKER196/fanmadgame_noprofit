@@ -1192,6 +1192,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd6a3da71d3d34c46b03132c156f6b20, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  b1: {fileID: 870323117}
+  b2: {fileID: 2022303428}
+  b3: {fileID: 1203560416}
+  b4: {fileID: 42793275}
   level: Gra
   tak: {fileID: 21300000, guid: 9b29b15e52f597a44819e8062af93395, type: 3}
 --- !u!1 &979867115
@@ -1336,6 +1340,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd6a3da71d3d34c46b03132c156f6b20, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  b1: {fileID: 870323117}
+  b2: {fileID: 2022303428}
+  b3: {fileID: 1203560416}
+  b4: {fileID: 42793275}
   level: Gra
   tak: {fileID: 21300000, guid: 9b29b15e52f597a44819e8062af93395, type: 3}
 --- !u!1 &1335785379
@@ -1871,6 +1879,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd6a3da71d3d34c46b03132c156f6b20, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  b1: {fileID: 870323117}
+  b2: {fileID: 2022303428}
+  b3: {fileID: 1203560416}
+  b4: {fileID: 42793275}
   level: Gra
   tak: {fileID: 21300000, guid: 9b29b15e52f597a44819e8062af93395, type: 3}
 --- !u!1 &2039503341

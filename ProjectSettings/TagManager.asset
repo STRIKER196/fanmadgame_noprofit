@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Laser
   - Spawner
+  - life
   layers:
   - Default
   - TransparentFX

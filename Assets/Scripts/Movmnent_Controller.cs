@@ -16,7 +16,7 @@ public class Movmnent_Controller : MonoBehaviour
     float lastFireTime;
     public float fireCooldown = 0.8f;
     public int hp = 300;
-
+    public GameObject[] life;
     public GameObject Explosion;
 
     // Start is called before the first frame update
@@ -32,6 +32,7 @@ public class Movmnent_Controller : MonoBehaviour
         speed += lpg * 3;
         hp += osad * 100;
         spawners = GameObject.FindGameObjectsWithTag("Spawner");
+        //life = GameObject.FindGameObjectsWithTag("life");
         foreach (GameObject s in spawners) {
             s.SetActive(false);
         }
@@ -53,72 +54,12 @@ public class Movmnent_Controller : MonoBehaviour
         {
             Shoot();
         }
-        switch (hp) {
-            case 100:
-                {
-                    GameObject.Find("life1").SetActive(true);
-                    string name = "life";
-                    for (int i = 2; i < 7; i++)
-                    {
-                        GameObject.Find(name + i).SetActive(false);
-                    }
-                    break;
-                }
-            case 200:
-                {
-                    GameObject.Find("life1").SetActive(true);
-                    GameObject.Find("life2").SetActive(true);
-                    string name = "life";
-                    for (int i = 3; i < 7; i++)
-                    {
-                        GameObject.Find(name + i).SetActive(false);
-                    }
-                    break;
-                }
-            case 300:
-                {
-                    GameObject.Find("life1").SetActive(true);
-                    GameObject.Find("life2").SetActive(true);
-                    GameObject.Find("life3").SetActive(true);
-                    string name = "life";
-                    for (int i = 4; i < 7; i++)
-                    {
-                        GameObject.Find(name + i).SetActive(false);
-                    }
-                    break;
-                }
-            case 400:
-                {
-                    string name = "life";
-                    for (int i = 1; i < 5; i++)
-                    {
-                        GameObject.Find(name + i).SetActive(true);
-                    }
-                    GameObject.Find("life5").SetActive(false);
-                    GameObject.Find("life6").SetActive(false);
-                    break;
-                }
-            case 500:
-                {
-                    string name = "life";
-                    for (int i = 1; i < 6; i++)
-                    {
-                        GameObject.Find(name + i).SetActive(true);
-                    }
-                    GameObject.Find("life6").SetActive(false);
-                    break;
-                }
-            case 600:
-                {
-                    string name = "life";
-                    for (int i = 1; i < 7; i++)
-                    {
-                        GameObject.Find(name + i).SetActive(true);
-                    }
-                    break;
-                }
-            default:
-                break;
+
+        DisableAllLifeIcons();
+        for (int i = 0; i < (hp / 100); i++)
+        {
+            if(i<6)
+                life[i].SetActive(true);
         }
     }
     void Movement()
@@ -165,10 +106,17 @@ public class Movmnent_Controller : MonoBehaviour
         }
     }
 
-    private void EnableSpawners() {
+    private void EnableSpawners()
+    {
         foreach (GameObject s in spawners)
         {
             s.SetActive(true);
+        }
+    }
+
+    private void DisableAllLifeIcons() {
+        foreach (GameObject l in life) {
+            l.SetActive(false);
         }
     }
 }

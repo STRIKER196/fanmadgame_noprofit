@@ -306,7 +306,7 @@ GameObject:
   - component: {fileID: 237901285}
   m_Layer: 0
   m_Name: life1
-  m_TagString: Untagged
+  m_TagString: life
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -656,7 +656,7 @@ GameObject:
   - component: {fileID: 604139446}
   m_Layer: 0
   m_Name: life5
-  m_TagString: Untagged
+  m_TagString: life
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -727,6 +727,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 114981043348112472, guid: 065e0baf88615634ca09a46978226bfb,
+        type: 2}
+      propertyPath: life.Array.size
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 4393095350830424, guid: 065e0baf88615634ca09a46978226bfb, type: 2}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -786,6 +791,36 @@ Prefab:
       propertyPath: m_Volume
       value: 0.62
       objectReference: {fileID: 0}
+    - target: {fileID: 114981043348112472, guid: 065e0baf88615634ca09a46978226bfb,
+        type: 2}
+      propertyPath: life.Array.data[0]
+      value: 
+      objectReference: {fileID: 237901284}
+    - target: {fileID: 114981043348112472, guid: 065e0baf88615634ca09a46978226bfb,
+        type: 2}
+      propertyPath: life.Array.data[1]
+      value: 
+      objectReference: {fileID: 1331949830}
+    - target: {fileID: 114981043348112472, guid: 065e0baf88615634ca09a46978226bfb,
+        type: 2}
+      propertyPath: life.Array.data[2]
+      value: 
+      objectReference: {fileID: 1792789297}
+    - target: {fileID: 114981043348112472, guid: 065e0baf88615634ca09a46978226bfb,
+        type: 2}
+      propertyPath: life.Array.data[3]
+      value: 
+      objectReference: {fileID: 1692066716}
+    - target: {fileID: 114981043348112472, guid: 065e0baf88615634ca09a46978226bfb,
+        type: 2}
+      propertyPath: life.Array.data[4]
+      value: 
+      objectReference: {fileID: 604139445}
+    - target: {fileID: 114981043348112472, guid: 065e0baf88615634ca09a46978226bfb,
+        type: 2}
+      propertyPath: life.Array.data[5]
+      value: 
+      objectReference: {fileID: 1121189832}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 065e0baf88615634ca09a46978226bfb, type: 2}
   m_IsPrefabAsset: 0
@@ -875,7 +910,7 @@ GameObject:
   - component: {fileID: 1121189833}
   m_Layer: 0
   m_Name: life6
-  m_TagString: Untagged
+  m_TagString: life
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1012,7 +1047,7 @@ GameObject:
   - component: {fileID: 1331949831}
   m_Layer: 0
   m_Name: life2
-  m_TagString: Untagged
+  m_TagString: life
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1129,7 +1164,7 @@ GameObject:
   - component: {fileID: 1692066717}
   m_Layer: 0
   m_Name: life4
-  m_TagString: Untagged
+  m_TagString: life
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1204,7 +1239,7 @@ GameObject:
   - component: {fileID: 1792789298}
   m_Layer: 0
   m_Name: life3
-  m_TagString: Untagged
+  m_TagString: life
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

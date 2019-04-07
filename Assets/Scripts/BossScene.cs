@@ -11,7 +11,7 @@ public class BossScene : MonoBehaviour
     void update() { }
     private void OnMouseDown()
     {
-        SceneManager.LoadScene("BossScene", LoadSceneMode.Single);
+        SceneManager.LoadScene("BossLevel", LoadSceneMode.Single);
     }
 }
 

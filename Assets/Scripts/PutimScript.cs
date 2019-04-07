@@ -27,7 +27,15 @@ public class PutimScript : MonoBehaviour {
     // Update is called once per frame
     private void OnTriggerEnter2D(Collider2D other)
     {
-        TakeHp(1);
+        if (other.tag == "Laser")
+        {
+            if (other.transform.parent != null)
+            {
+                Destroy(other.transform.parent.gameObject);
+            }
+            Destroy(other.gameObject);
+            TakeHp(1);
+        }
         if (bossHp <= 0)
         {
             Instantiate(Explosion, transform.position, Quaternion.identity);
@@ -47,7 +55,8 @@ public class PutimScript : MonoBehaviour {
 
     }
 
-    private void TakeHp(int damage) {
+    private void TakeHp(int damage)
+    {
         bossHp -= damage;
     }
 }
