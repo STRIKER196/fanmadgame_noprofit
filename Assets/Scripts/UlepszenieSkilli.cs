@@ -9,7 +9,7 @@ public class UlepszenieSkilli : MonoBehaviour
     public GameObject b1;
     public GameObject b2;
     public GameObject b3;
-    public GameObject b4;
+    //public GameObject b4;
     public string level;
     int dzida;
     int lpg;
@@ -28,7 +28,7 @@ public class UlepszenieSkilli : MonoBehaviour
         HideElements();
         try
         {
-            b4.SetActive(false);
+            //b4.SetActive(false);
         }
         catch { }
 
@@ -36,7 +36,11 @@ public class UlepszenieSkilli : MonoBehaviour
         {
             SetAll();
             HideElements();
-            b4.SetActive(true);
+            if (mobLevel >= 9)
+            {
+                SceneManager.LoadScene("BossLevel", LoadSceneMode.Single);
+            }
+            //b4.SetActive(true);
         }
     }
 

@@ -9,12 +9,12 @@ public class AddSceneSingle : MonoBehaviour
 
     public void Start()
     {
-        PlayerPrefs.SetInt("dzida", 3);
-        PlayerPrefs.SetInt("lpg", 3);
-        PlayerPrefs.SetInt("osad", 2);
+        PlayerPrefs.SetInt("dzida", 0);
+        PlayerPrefs.SetInt("lpg", 0);
+        PlayerPrefs.SetInt("osad", 0);
         PlayerPrefs.SetFloat("cooldown", 0.8f);
         PlayerPrefs.SetFloat("enemyms",1.4f);
-        PlayerPrefs.SetInt("mobLevel", 8);
+        PlayerPrefs.SetInt("mobLevel", 0);
     }
     void update() { }
     private void OnMouseDown()
